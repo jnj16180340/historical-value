@@ -1,0 +1,622 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     23591,        613]
+NotebookOptionsPosition[     21755,        547]
+NotebookOutlinePosition[     22093,        562]
+CellTagsIndexPosition[     22050,        559]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+reverse engineering a worm\[CloseCurlyQuote]s mind\
+\>", "Title",
+ CellChangeTimes->{{3.566221095816695*^9, 3.5662211072858667`*^9}, {
+  3.566221215888054*^9, 3.5662212382085037`*^9}}],
+
+Cell["what a pretentious title!", "Subtitle",
+ CellChangeTimes->{{3.566221109510219*^9, 3.566221121809918*^9}}],
+
+Cell[TextData[{
+ "revisiting the psychophysics of ",
+ StyleBox["c. elegans",
+  FontSlant->"Italic"]
+}], "Subsubtitle",
+ CellChangeTimes->{{3.566221131176463*^9, 3.566221211688398*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["background", "Section",
+ CellChangeTimes->{{3.5662230055299587`*^9, 3.566223012333955*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["by way of warning", "Subsection",
+ CellChangeTimes->{{3.566222805678157*^9, 3.566222815666436*^9}}],
+
+Cell["\<\
+anything with a capital letter (change script?) should be taken to be written \
+in \[OpenCurlyDoubleQuote]scare quotes.\[CloseCurlyDoubleQuote] this denotes \
+really useful words with ambiguous definitions. not all scary words are \
+marked as such!\
+\>", "Text",
+ CellChangeTimes->{{3.566222824532568*^9, 3.566222999532518*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["behavioral psych", "Subsection",
+ CellChangeTimes->{{3.56622107919106*^9, 3.5662210936422043`*^9}, {
+  3.566222800329481*^9, 3.5662228034556837`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["what is it?", "Subsubsection",
+ CellChangeTimes->{{3.566221555434676*^9, 3.566221568362597*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Graphics", "[", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"of", " ", 
+    RowBox[{"a", " ", "'"}], "black", " ", 
+    RowBox[{"box", "'"}], " ", "model"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.566221359209525*^9, 3.566221372500553*^9}}],
+
+Cell["\<\
+A Mind is a Black Box which maps Inputs onto Outputs. Inputs and Outputs \
+should be easily observed and quantified. As such, it is a collection of \
+rules.\
+\>", "Text",
+ CellChangeTimes->{{3.566221385560257*^9, 3.5662215438477697`*^9}, 
+   3.566221614688107*^9, {3.566221982106401*^9, 3.566222000928173*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["what is input?", "Subsubsection",
+ CellChangeTimes->{{3.566221599788328*^9, 3.566221638759636*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.5662216419904003`*^9, 3.566221643532733*^9}}],
+
+Cell["\<\
+easily quantified: external sensory stimuli
+maybe easily quantified: internal sensory stimuli (hungry, sexy, etc.)
+not easily quantified: thoughts? feelings? memory? \
+\[OpenCurlyDoubleQuote]internal state?\[CloseCurlyDoubleQuote]\
+\>", "Text",
+ CellChangeTimes->{{3.566221647137055*^9, 3.5662217903839808`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["what is output?", "Subsubsection",
+ CellChangeTimes->{{3.566221799584086*^9, 3.566221809664878*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.566221832378798*^9, 3.5662218339648123`*^9}}],
+
+Cell["\<\
+easily quantified : movement, stereotyped behaviors
+maybe easily quantified: nonstereotyped observable behavior (vocalization, \
+goal-directed crap etc.)
+not easily quantified: thoughts, feelings, \[OpenCurlyDoubleQuote]internal \
+state,\[CloseCurlyDoubleQuote] memory and altered future behavior\
+\>", "Text",
+ CellChangeTimes->{{3.566221811939663*^9, 3.56622194888002*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["what is the black box?", "Subsubsection",
+ CellChangeTimes->{{3.566222029533527*^9, 3.5662220425679903`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.566222044653696*^9, 3.566222046430496*^9}}],
+
+Cell[TextData[{
+ "so far, we\[CloseCurlyQuote]ve resisted calling it a \
+\[OpenCurlyDoubleQuote]function.\[CloseCurlyDoubleQuote] this is because most \
+black boxes that we construct are really incomplete (this doesn\
+\[CloseCurlyQuote]t mean they\[CloseCurlyQuote]re not useful). let\
+\[CloseCurlyQuote]s just take this for granted; obviously nobody\
+\[CloseCurlyQuote]s able to model even a small part of this in any realistic \
+fashion.\n\nit\[CloseCurlyQuote]s an empirically-derived set of rules.\n\n",
+ Cell[BoxData[GridBox[{
+    {
+     StyleBox[
+      RowBox[{"laura", " ", "hears"}],
+      FontWeight->"Bold"], 
+     StyleBox[
+      RowBox[{"laura", " ", "says"}],
+      FontWeight->"Bold"], 
+     StyleBox["probability",
+      FontWeight->"Bold"], 
+     StyleBox["notes",
+      FontWeight->"Bold"]},
+    {"\"\<hi laura!\>\"", "\"\<hi nate\>\"", "0.95", 
+     RowBox[{"pretty", " ", "robust"}]},
+    {"\"\<hi laura!\>\"", "\"\<eat shit 'n die!\>\"", "0.025", 
+     RowBox[{
+     "??", "??? hypothesis: related to missed birthday or anniversary?"}]},
+    {"\"\<hi laura!\>\"", "\"\<hi billy-bob\>\"", "0.005", 
+     RowBox[{"edge", " ", 
+      RowBox[{"case", "--"}], " ", "need", " ", "to", " ", "control", " ", 
+      "for", " ", "stimulus", " ", 
+      RowBox[{"delivery", "!"}]}]},
+    {"\"\<hi laura!\>\"", "\"\<hi joe\>\"", "0.005", 
+     RowBox[{"edge", " ", 
+      RowBox[{"case", "--"}], " ", "typically", " ", "happens", " ", "when", 
+      " ", "undergrads", " ", "are", " ", "doing", " ", "it", " ", "or", " ", 
+      "something"}]},
+    {"\"\<hi laura!\>\"", "...", "...", "..."}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+     "RowsIndexed" -> {}}]]],
+ "\n\nthis doesn\[CloseCurlyQuote]t seem very rigorous!\n\nthe Black Box also \
+abstracts away all of the biology in between Input and Output. (graphics: \
+black box becoming a mess of fibers and neurons)\n\nlet\[CloseCurlyQuote]s \
+explore this a little more.\n\nmovement and body shape result from patterns (",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[ScriptX]", "\[RightVector]"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ",\[ScriptT]) of muscle contraction. (graphics?)\n\nwhich result from \
+patterns of Activity in the innervating motor neurons (graphics?)\n\nwhich \
+result from patterns of Activity in the innervating interneurons (graphics?)\n\
+\nwhich result from patterns of Activity in the innervating sensory neurons \
+(graphics?)\n\nby way of analogy,"
+}], "Text",
+ CellChangeTimes->{{3.566222050667014*^9, 3.566222133824411*^9}, {
+  3.566222183488743*^9, 3.566222230792131*^9}, {3.5662222724404173`*^9, 
+  3.566222523952958*^9}, {3.5662226511299973`*^9, 3.566222789252388*^9}, {
+  3.5662230368820047`*^9, 3.566223066999362*^9}, {3.5662231550006104`*^9, 
+  3.566223155725705*^9}, {3.56622325154496*^9, 3.566223561737545*^9}, {
+  3.5662235942888412`*^9, 3.566223940620676*^9}, {3.566223976882785*^9, 
+  3.566224157304934*^9}, {3.566224187390497*^9, 3.566224191070753*^9}, {
+  3.5662243635616617`*^9, 3.5662244763176813`*^9}, {3.566224556137714*^9, 
+  3.566224580497183*^9}, {3.566224617530267*^9, 3.566224624489814*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Graphics", "[", "mindOfLauraGraphPlot", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"of", " ", 
+     RowBox[{"Laura", "'"}], "s", " ", 
+     RowBox[{"eyes", "/", "ears"}]}], " ", "\[Rule]", " ", 
+    RowBox[{"memory", " ", "\[Rule]", " ", 
+     RowBox[{
+      RowBox[{"vocal", " ", "stuff"}], " ", "\[Rule]", " ", "mouth"}]}]}], 
+   " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.5662246263549747`*^9, 3.566224660222139*^9}, {
+  3.566227717267396*^9, 3.56622772223316*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{GraphicsComplexBox[CompressedData["
+1:eJw1lHs0VHkcwGeHHlRod5a2zay2GaLyqDBKfcdSmIQe20sKmcg2x8aaRkVR
+NJQ0amNreqBTsqTVWK3KjLDUljJW3rZyMmYM8zg1M7LY7td2z7nnd+79/e4f
+9/P5nO/8iNiNbDKJRIr+eBNrnz+nx4E1DpPrMGw2u5SV1zkCt8fycKXOj8f3
+n87tjd8O/tXNMEK9jPuk/6/tBh6es9zHwH1DRTiuLnUh+P7TuUd/5eB3fFtn
+3O8JdSgPPi6C3aZSzgyuElrrZ/ba5d4DWohjkszi43N2xZPFUQ9ALn3qUZY/
+CAvWxbjYD4mh8J6608p+EG55dFeUCWogxbWj++1NBZTPN5b5k2tBWCSUDFIV
+4HFhWa7p2jr4PGVxxfRsOdBFUp83O+phHvfOIruRARBZ310Z8mczhMaEJWqi
+XkE3o3faAYYUrGjxgTMu/gMWP2v7uQIpjCW4q6129sLql2ufdr2QwuOKzLdm
+c3pgUWEwh6GTwrXwATrpRRfMalTLgz5rAcHJ027k9E4wcyl0stBKocqaX+vo
+2QFuNhrLnEYp0KrLl1191wakuFOHs66fFXv/FNw34TgI/KMlU2M9z4l5deyv
+GacUEK1K+zXG+bw4K7svPLBfDsz846+1yefEaQWuMUFecuBJ+18stBeID/Ai
+Tf0uDwDp6Bq9iJ0p3jLHLM17VAY2mnh7bUaymOWlbvXfKQOSx773hgVMsSH6
+sdGumn6geHrGh3k/gIQqbUFwWDcoDx5qMudUA//6h+ys5V2QfGd/rt8hCSR8
+PzexgdIJGXnnG98oaqB4ZT6zhdwBV0vuvx1LqwW2a5xPLKkdfE0tv/rXrx46
+SVXpTPM28IuNyR53boA9at3Ec+eX4F0YQleseAwqQRmVv7cVjOIykUNDLMWK
+4HJpZDdyavKpR270uEjk+PTybAXBNdVLgpxrVvyI3G8ciEAPfBc2eql6Z4ae
+hivNZYS3iQAWelxi/wG9ShvWoWdW3zP0XhqVhx2QXWXYhdyJgp2Yta7BbmJM
+TmBHV1wp2BV3lQQ7C16lwO6OhbZhh8OcVOxy9oy72OkRiyfYbYk1BTu+qrTG
+rucEVWLnmTwGdr9+UwpyuOl0E7nQf29ATsIEEXIL6cpAjnf27EKuyW5eyFm3
+nNxPcD/PjZ304NiBXkp7ZTzC0wa3MvRWKmhAj4+WjKJX2rdi9NzJuYfeh5xL
+sAPS9R3tRBcglWInx57NsyW6iUhWnyA6kqyWvCe6UorXTnb2hzt2N95mhR3y
+AwZeEV2WiusnO00aLya61Y76YsfbhhjYdbV4KXbeLlyE3YflpdjSzdVQfcoO
+eeQcaaFWeqmhfKsJ8ooPOMHclKgGG+5vyJMbqVVdqVBD1EE28lY5jQ+769RA
+39+BPnyOzhsTrdAAX0FCX20X/069kaoBitoJfU7cyPHNfaaByItN6DvB+L7N
+UksdkGtLsQcqt8mkaI8Ofihox15U7NDXtLs6CKpR4hww/WU6zc5YD+Q6Jvb2
+xknT4rBFDyUbWNjjsG1jUHGRHobcFDgHipgZi78Z1cPmMCH2fOZCsoXRegNs
+tFDgHAi0ejRYXK6Gs8IryGM5p/L5GWMNSIS1yGsonVditFUDjKn5OAc+JAUt
+PH5LA87lBTgHmimM9vTRj//bZtJM+FD69s3NCNDCtW3ncA48dI/TThFqgWmg
+OhA+o26ldR2Wa4GkYowSvnum3hZZLtXDLvYC7MH4i/2J05L0QKoKw15yHWkT
+hjo9nI7YjT0pk76bxTUxgOpVOva21z9wpjnLAOGCUpwD0eEP7u9IN8CUnGnY
+K8uF06N7aIBV+SHY86Evxa18tQHcTwZg7/8BslNCZA==
+      "], 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.03450333469913779, 0.7}}], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox["\"nate's image\"", StripOnInput -> False], 
+                  TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{1, 2}]},
+         "\"nate's image\"",
+         TooltipStyle->"TextStyling"],
+        Annotation[#, "nate's image", "Tooltip"]& ], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox["\"it's nate\"", StripOnInput -> False], 
+                  TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{2, 5}]},
+         "\"it's nate\"",
+         TooltipStyle->"TextStyling"],
+        Annotation[#, "it's nate", "Tooltip"]& ], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox[
+                  "\"\\\"hi laura!\\\" \\n (in nate's voice)\"", StripOnInput -> 
+                   False], TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{3, 2}]},
+         "\"\\\"hi laura!\\\" \\n (in nate's voice)\"",
+         TooltipStyle->"TextStyling"],
+        Annotation[#, "\"hi laura!\" \n (in nate's voice)", "Tooltip"]& ], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox[
+                  "\"\\\"hi laura!\\\" \\n (in nate's voice)\"", StripOnInput -> 
+                   False], TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{3, 4}]},
+         "\"\\\"hi laura!\\\" \\n (in nate's voice)\"",
+         TooltipStyle->"TextStyling"],
+        Annotation[#, "\"hi laura!\" \n (in nate's voice)", "Tooltip"]& ], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox["\"it's a greeting\"", StripOnInput -> False], 
+                  TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{4, 6}]},
+         "\"it's a greeting\"",
+         TooltipStyle->"TextStyling"],
+        Annotation[#, "it's a greeting", "Tooltip"]& ], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox[
+                   
+                   RowBox[{
+                    "Network`GraphPlot`wrapper", "(", "\"all good!\"", ")"}], 
+                   StripOnInput -> False], TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 
+           23, 24, 6}]},
+         RowBox[{"Network`GraphPlot`wrapper", "[", "\"all good!\"", "]"}]],
+        Annotation[#, 
+         Network`GraphPlot`wrapper["all good!"], "Tooltip"]& ], 
+       ArrowBox[{5, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 
+        39, 40, 6}], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox[
+                   
+                   RowBox[{
+                    "Network`GraphPlot`wrapper", "(", "\"HAPPY\"", ")"}], 
+                   StripOnInput -> False], TraditionalForm]], {0, 0}, 
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{6, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+            55, 56, 7}]},
+         RowBox[{"Network`GraphPlot`wrapper", "[", "\"HAPPY\"", "]"}]],
+        Annotation[#, 
+         Network`GraphPlot`wrapper["HAPPY"], "Tooltip"]& ], 
+       ArrowBox[{6, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 
+        71, 72, 7}], 
+       TagBox[
+        TooltipBox[
+         {Arrowheads[{{0.5, 0.5, 
+             GraphicsBox[{
+               GrayLevel[0], 
+               InsetBox[
+                BoxData[
+                 FormBox[
+                  StyleBox[
+                   
+                   RowBox[{
+                    "Network`GraphPlot`wrapper", "(", "\"\\\"hi nate!\\\"\"", 
+                    ")"}], StripOnInput -> False], TraditionalForm]], {0, 0}, 
+                
+                ImageScaled[{0.5, 0.5}], Automatic, None, Background -> 
+                GrayLevel[1]]}]}, {0.03450333469913779, 0.8}}], 
+          ArrowBox[{7, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86,
+            87, 88, 8}]},
+         RowBox[{
+          "Network`GraphPlot`wrapper", "[", "\"\\\"hi nate!\\\"\"", "]"}]],
+        Annotation[#, 
+         Network`GraphPlot`wrapper["\"hi nate!\""], "Tooltip"]& ], 
+       ArrowBox[{7, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102,
+         103, 104, 8}]}], {{
+       {GrayLevel[1], 
+        DiskBox[{1.8931072854508038`, 0.9465536427254019}, 0.15]}, 
+       {AbsoluteThickness[2], 
+        CircleBox[{1.8931072854508038`, 0.9465536427254019}, 0.15], {}, 
+        InsetBox["Eyes", {1.8931072854508038`, 0.9465536427254019}]}}, {
+       {GrayLevel[1], 
+        DiskBox[{1.6158681422683872`, 1.615868142238337}, 0.15]}, 
+       {AbsoluteThickness[2], 
+        CircleBox[{1.6158681422683872`, 1.615868142238337}, 0.15], {}, 
+        InsetBox[
+         "BrainPersonRecognizer", \
+{1.6158681422683872`, 1.615868142238337}]}}, {
+       {GrayLevel[1], 
+        DiskBox[{0.9465536427678989, 1.8931072854508038`}, 0.15]}, 
+       {AbsoluteThickness[2], 
+        CircleBox[{0.9465536427678989, 1.8931072854508038`}, 0.15], {}, 
+        InsetBox["Ears", {0.9465536427678989, 1.8931072854508038`}]}}, {
+       {GrayLevel[1], 
+        DiskBox[{0.27723914324251664`, 1.6158681422984371`}, 0.15]}, 
+       {AbsoluteThickness[2], 
+        CircleBox[{0.27723914324251664`, 1.6158681422984371`}, 0.15], {}, 
+        InsetBox[
+         "BrainLanguageRecognizer", \
+{0.27723914324251664`, 1.6158681422984371`}]}}, {
+       {GrayLevel[1], DiskBox[{0., 0.9465536428103959}, 0.15]}, 
+       {AbsoluteThickness[2], CircleBox[{0., 0.9465536428103959}, 0.15], {}, 
+        InsetBox["BrainMemory", {0., 0.9465536428103959}]}}, {
+       {GrayLevel[1], 
+        DiskBox[{0.2772391431223168, 0.2772391432725665}, 0.15]}, 
+       {AbsoluteThickness[2], 
+        CircleBox[{0.2772391431223168, 0.2772391432725665}, 0.15], {}, 
+        InsetBox["BrainDecider", {0.2772391431223168, 0.2772391432725665}]}}, {
+       {GrayLevel[1], DiskBox[{0.9465536425979107, 0.}, 0.15]}, 
+       {AbsoluteThickness[2], CircleBox[{0.9465536425979107, 0.}, 0.15], {}, 
+        InsetBox["BrainTalker", {0.9465536425979107, 0.}]}}, {
+       {GrayLevel[1], 
+        DiskBox[{1.6158681421481877`, 0.27723914309226716`}, 0.15]}, 
+       {AbsoluteThickness[2], 
+        CircleBox[{1.6158681421481877`, 0.27723914309226716`}, 0.15], {}, 
+        InsetBox["Mouth", {1.6158681421481877`, 0.27723914309226716`}]}}}},
+    ContentSelectable->True],
+   Annotation[#, 
+    VertexCoordinateRules -> {{1.8931072854508038`, 0.9465536427254019}, {
+     1.6158681422683872`, 1.615868142238337}, {0.9465536427678989, 
+     1.8931072854508038`}, {0.27723914324251664`, 1.6158681422984371`}, {0., 
+     0.9465536428103959}, {0.2772391431223168, 0.2772391432725665}, {
+     0.9465536425979107, 0.}, {1.6158681421481877`, 0.27723914309226716`}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellChangeTimes->{3.566227723471051*^9}]
+}, Open  ]],
+
+Cell["\<\
+this is starting to get complicated, and this is even before getting down to \
+the level of electrical signals and chemical signaling!
+
+fortunately, there\[CloseCurlyQuote]s a simpler model.\
+\>", "Text",
+ CellChangeTimes->{{3.566228633204996*^9, 3.566228662953575*^9}, {
+  3.5662287088908157`*^9, 3.566228732475052*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["nematode physiology", "Subsection",
+ CellChangeTimes->{{3.566224593243073*^9, 3.5662246013323603`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.566228804547751*^9, 3.566228810370656*^9}}],
+
+Cell[TextData[{
+ "this is ",
+ StyleBox["c. elegans",
+  FontSlant->"Italic"],
+ ", an elegant little worm.\n\nze\[CloseCurlyQuote]s got ### muscles \
+controlled by #### neurons\n\nhowever, these are grouped into ####..."
+}], "Text",
+ CellChangeTimes->{{3.566228812333241*^9, 3.5662288713148003`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Graphics", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.566228872569018*^9, 3.56622888296344*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["eigenworms", "Subsection",
+ CellChangeTimes->{{3.566228899619494*^9, 3.566228905521823*^9}}],
+
+Cell["\<\
+in real life, body shapes are constrained. body shapes are comfined to a \
+plane (as body muscles only have planar symmetry) and muscles cannot stretch \
+or contract infinitely.\
+\>", "Text",
+ CellChangeTimes->{{3.566228923617958*^9, 3.566228952642473*^9}, {
+  3.566229303322228*^9, 3.566229349330873*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Graphics", "[", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "a", " ", "ridiculously", " ", "splayed", " ", "out", " ", "body"}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.566228954109619*^9, 3.566228967353395*^9}}],
+
+Cell["\<\
+90% of body shape variance is described by just 4 characteristic body shapes\
+\>", "Text",
+ CellChangeTimes->{{3.566228983544917*^9, 3.5662290926979427`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Graphics", "[", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"ryu", "'"}], "s", " ", "graphic", " ", "from", " ", "the", " ", 
+    "thin", " ", 
+    RowBox[{"paper", "!"}]}], " ", "*)"}], " "}]], "Input",
+ CellChangeTimes->{{3.566229097257628*^9, 3.566229110121141*^9}}],
+
+Cell["\<\
+in other words, most body shapes are generated from a small number of \
+characteristic, invariant patterns of muscle contraction/motor neuron \
+activation.
+
+This of course is a rough estimate of a \[OpenCurlyDoubleQuote]whole worm,\
+\[CloseCurlyDoubleQuote] because we\[CloseCurlyQuote]re missing:
+-pharynx muscles (chewing and swallowing)
+-3d head movements
+-egging and mating
+
+but maybe it\[CloseCurlyQuote]s enough for drug screening, if not for a \
+complete theory of mind.\
+\>", "Text",
+ CellChangeTimes->{{3.566229115457799*^9, 3.5662292890345383`*^9}, {
+  3.566229360898939*^9, 3.566229369515827*^9}, {3.5662294063945513`*^9, 
+  3.566229423802579*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1085, 621},
+WindowMargins->{{55, Automatic}, {Automatic, 18}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 194, 4, 93, "Title"],
+Cell[776, 28, 111, 1, 51, "Subtitle"],
+Cell[890, 31, 184, 5, 31, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1099, 40, 97, 1, 81, "Section"],
+Cell[CellGroupData[{
+Cell[1221, 45, 105, 1, 45, "Subsection"],
+Cell[1329, 48, 338, 6, 51, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1704, 59, 156, 2, 45, "Subsection"],
+Cell[CellGroupData[{
+Cell[1885, 65, 102, 1, 35, "Subsubsection"],
+Cell[1990, 68, 285, 7, 32, "Input"],
+Cell[2278, 77, 320, 6, 51, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2635, 88, 105, 1, 35, "Subsubsection"],
+Cell[2743, 91, 124, 2, 32, "Input"],
+Cell[2870, 95, 322, 6, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3229, 106, 106, 1, 35, "Subsubsection"],
+Cell[3338, 109, 124, 2, 32, "Input"],
+Cell[3465, 113, 385, 7, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3887, 125, 115, 1, 35, "Subsubsection"],
+Cell[4005, 128, 122, 2, 32, "Input"],
+Cell[4130, 132, 3181, 62, 570, "Text"],
+Cell[CellGroupData[{
+Cell[7336, 198, 523, 13, 32, "Input"],
+Cell[7862, 213, 10797, 237, 375, "Output"]
+}, Open  ]],
+Cell[18674, 453, 331, 7, 71, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19054, 466, 109, 1, 45, "Subsection"],
+Cell[19166, 469, 122, 2, 32, "Input"],
+Cell[19291, 473, 298, 7, 111, "Text"],
+Cell[19592, 482, 237, 4, 77, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19866, 491, 98, 1, 45, "Subsection"],
+Cell[19967, 494, 316, 6, 51, "Text"],
+Cell[20286, 502, 264, 7, 32, "Input"],
+Cell[20553, 511, 168, 3, 31, "Text"],
+Cell[20724, 516, 319, 8, 32, "Input"],
+Cell[21046, 526, 669, 16, 191, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

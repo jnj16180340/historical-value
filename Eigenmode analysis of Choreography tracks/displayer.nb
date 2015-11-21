@@ -1,0 +1,512 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19226,        503]
+NotebookOptionsPosition[     18223,        465]
+NotebookOutlinePosition[     18561,        480]
+CellTagsIndexPosition[     18518,        477]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tdshow", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"WienerFilter", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Setting", "[", "dat", "]"}], "[", 
+             RowBox[{"[", "k", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"Setting", "[", "dat", "]"}], "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"PlotLabel", " ", "\[Rule]", " ", 
+         RowBox[{
+          RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+          RowBox[{"[", "k", "]"}], "]"}]}], " ", ",", 
+        RowBox[{"Joined", " ", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"True", ",", "False"}], "}"}]}], ",", 
+        RowBox[{"PlotStyle", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"Thick", ",", "Thin"}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "//", "Length"}], 
+        ",", "1"}], "}"}]}], "]"}], " ", "//", "Dynamic"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.56496512076863*^9, 3.564965127088562*^9}, {
+   3.564965185209985*^9, 3.5649651896583443`*^9}, {3.564965220288363*^9, 
+   3.564965263443365*^9}, {3.5649653264881067`*^9, 3.564965464711968*^9}, {
+   3.56496549939817*^9, 3.564965523330071*^9}, 3.5649656562314873`*^9, {
+   3.5649657604518642`*^9, 3.56496576562534*^9}, {3.5649659954353247`*^9, 
+   3.564965997015387*^9}, {3.564966913931797*^9, 3.564966934572584*^9}, {
+   3.564966983541068*^9, 3.564967017472766*^9}, {3.564967208644884*^9, 
+   3.5649672298220263`*^9}, {3.5649679684337683`*^9, 
+   3.5649679940577497`*^9}, {3.564968050920823*^9, 3.5649680513987837`*^9}, 
+   3.564968563454933*^9, {3.56496859398892*^9, 3.564968756301125*^9}, {
+   3.564969619761341*^9, 3.564969624779613*^9}, {3.5662308433706207`*^9, 
+   3.5662308473772297`*^9}, {3.5662310965697727`*^9, 
+   3.5662311112829733`*^9}, {3.566231161191556*^9, 3.566231163049532*^9}, {
+   3.566233022763033*^9, 3.566233046628942*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fdshow", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"FourierDCT", "[", 
+           RowBox[{"WienerFilter", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Setting", "[", "dat", "]"}], "[", 
+              RowBox[{"[", "k", "]"}], "]"}], ",", "2"}], "]"}], "]"}], ",", 
+          RowBox[{"FourierDCT", "[", 
+           RowBox[{
+            RowBox[{"Setting", "[", "dat", "]"}], "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"PlotLabel", " ", "\[Rule]", " ", 
+         RowBox[{
+          RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+          RowBox[{"[", "k", "]"}], "]"}]}], " ", ",", 
+        RowBox[{"Joined", " ", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"True", ",", "False"}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "//", "Length"}], 
+        ",", "1"}], "}"}]}], "]"}], " ", "//", "Dynamic"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DisplayDataData", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dat", "]"}], "[", 
+               RowBox[{"[", "k", "]"}], "]"}], "[", 
+              RowBox[{"[", ";;", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dat", "]"}], "[", 
+               RowBox[{"[", "l", "]"}], "]"}], "[", 
+              RowBox[{"[", ";;", "]"}], "]"}]}], "}"}], "\[Transpose]"}], ",", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dat", "]"}], "[", 
+               RowBox[{"[", "k", "]"}], "]"}], "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ";;", "\[ScriptT]"}], "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dat", "]"}], "[", 
+               RowBox[{"[", "l", "]"}], "]"}], "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ";;", "\[ScriptT]"}], "]"}], "]"}]}], "}"}], 
+           "\[Transpose]"}]}], "}"}], ",", 
+        RowBox[{"PlotLabel", " ", "\[Rule]", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+           RowBox[{"[", "l", "]"}], "]"}], "<>", "\"\< vs \>\"", "<>", 
+          RowBox[{
+           RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}]}], "  ", ",", 
+        RowBox[{"Joined", " ", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"False", ",", "True"}], "}"}]}], ",", 
+        RowBox[{"PlotStyle", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"Thin", ",", "Thick"}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "//", "Length"}], 
+        ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"l", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "//", "Length"}], 
+        ",", "1"}], "}"}]}], "]"}], " ", "//", "Dynamic"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.56496512076863*^9, 3.564965127088562*^9}, {
+   3.564965185209985*^9, 3.5649651896583443`*^9}, {3.564965220288363*^9, 
+   3.564965263443365*^9}, {3.5649653264881067`*^9, 3.564965464711968*^9}, {
+   3.56496549939817*^9, 3.564965523330071*^9}, 3.5649656562314873`*^9, {
+   3.5649657604518642`*^9, 3.56496576562534*^9}, {3.5649659954353247`*^9, 
+   3.564965997015387*^9}, {3.564966913931797*^9, 3.564966934572584*^9}, {
+   3.564966983541068*^9, 3.564967017472766*^9}, {3.564967208644884*^9, 
+   3.5649672298220263`*^9}, {3.5649679684337683`*^9, 
+   3.5649679940577497`*^9}, {3.564968050920823*^9, 3.5649680513987837`*^9}, 
+   3.564968563454933*^9, {3.56496859398892*^9, 3.564968756301125*^9}, {
+   3.564969619761341*^9, 3.564969624779613*^9}, {3.5662308433706207`*^9, 
+   3.5662308473772297`*^9}, {3.5662310965697727`*^9, 
+   3.5662311112829733`*^9}, {3.566231161191556*^9, 3.566231163049532*^9}, {
+   3.566231290226777*^9, 3.5662312930478487`*^9}, {3.56623135470304*^9, 
+   3.566231438089794*^9}, {3.5662314818318768`*^9, 3.566231482551548*^9}, {
+   3.5662331335075703`*^9, 3.56623315360319*^9}, {3.566233234150733*^9, 
+   3.566233263806909*^9}, {3.566233335647649*^9, 3.566233340816001*^9}, {
+   3.566233414766776*^9, 3.566233415586051*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TabView", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<\[ScriptT]-domain\>\"", "\[Rule]", "tdshow"}], ",", " ", 
+     RowBox[{"\"\<\[ScriptF]-domain\>\"", "\[Rule]", "fdshow"}]}], "}"}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.566231314429336*^9, 3.566231317555254*^9}, {
+   3.566233054340575*^9, 3.566233056387663*^9}, 3.566233161381631*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["DisplayDataData"], "Input",
+ CellChangeTimes->{{3.566233163384622*^9, 3.566233166193555*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Manipulate[
+    ListPlot[{
+      Transpose[{
+        Part[
+         Part[
+          Setting[$CellContext`dat], $CellContext`k], 
+         Span[1, All]], 
+        Part[
+         Part[
+          Setting[$CellContext`dat], $CellContext`l], 
+         Span[1, All]]}], 
+      Transpose[{
+        Part[
+         Part[
+          Setting[$CellContext`dat], $CellContext`k], 
+         Span[1, $CellContext`\[ScriptT]]], 
+        Part[
+         Part[
+          Setting[$CellContext`dat], $CellContext`l], 
+         Span[1, $CellContext`\[ScriptT]]]}]}, PlotLabel -> StringJoin[
+       Part[
+        Setting[$CellContext`datheaderlong], $CellContext`l], " vs ", 
+       Part[
+        Setting[$CellContext`datheaderlong], $CellContext`k]], 
+     Joined -> {False, True}, PlotStyle -> {Thin, Thick}], {$CellContext`k, 1, 
+     Length[
+      Setting[$CellContext`datheaderlong]], 1}, {$CellContext`l, 1, 
+     Length[
+      Setting[$CellContext`datheaderlong]], 1}], StandardForm],
+  ImageSizeCache->{407., {177., 184.}}]], "Output",
+ CellChangeTimes->{3.56623316735577*^9, 3.5662332668643293`*^9, 
+  3.566233344972641*^9, 3.566233418489852*^9, 3.566240745154755*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Grid", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Setting", "[", "dat", "]"}], "\[Transpose]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "elementsdat"}], "]"}], "]"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+       RowBox[{"[", "elementsdat", "]"}], "]"}]}], "}"}], "\[Transpose]"}], 
+   "]"}], "//", "Dynamic"}]], "Input"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Grid[
+    Transpose[{Part[
+        Transpose[
+         Setting[$CellContext`dat]], 1, $CellContext`elementsdat] Part[
+        Setting[$CellContext`datheaderlong], $CellContext`elementsdat]}]], 
+   StandardForm],
+  ImageSizeCache->{113., {36.5, 43.5}}]], "Output",
+ CellChangeTimes->{3.5662303481495523`*^9, 3.566230501719088*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"PopupMenu", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "wormid", "]"}], ",", "worms"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Slider", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "\[ScriptT]", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Setting", "[", "dat", "]"}], "\[Transpose]"}], "//", 
+      "Length"}], ",", "1"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", "\[ScriptT]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"Column", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Partition", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Setting", "[", "contour", "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"\[ScriptT]", ",", 
+              RowBox[{"2", ";;"}]}], "]"}], "]"}], ",", "2"}], "]"}], " ", 
+         ",", 
+         RowBox[{"Partition", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Setting", "[", "spine", "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"\[ScriptT]", ",", 
+              RowBox[{"2", ";;"}]}], "]"}], "]"}], ",", "2"}], "]"}]}], "}"}],
+        ",", 
+       RowBox[{"Joined", " ", "\[Rule]", " ", 
+        RowBox[{"{", 
+         RowBox[{"True", ",", "False"}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Thick", ",", "Thin"}], "}"}]}], ",", 
+       RowBox[{"AspectRatio", " ", "\[Rule]", " ", "1"}], ",", 
+       RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"PlotRangePadding", "\[Rule]", "0.5"}], ",", 
+       RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"\"\<worm \>\"", "<>", 
+         RowBox[{"Setting", "[", "wormid", "]"}]}]}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
+     RowBox[{"BarChart", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Setting", "[", "dat", "]"}], "\[Transpose]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"\[ScriptT]", ",", "elementseigen"}], "]"}], "]"}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "}"}], "]"}], 
+  "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.564877601465603*^9, 3.564877614621595*^9}, {
+   3.564878046991481*^9, 3.564878078530014*^9}, {3.564878159488221*^9, 
+   3.5648781889216423`*^9}, {3.564878267225751*^9, 3.564878277680779*^9}, {
+   3.564878309362344*^9, 3.5648784907072268`*^9}, {3.564878825164009*^9, 
+   3.564878870053081*^9}, 3.564955665966196*^9, 3.564962020999321*^9, 
+   3.56496215478722*^9, {3.5649625660638943`*^9, 3.564962568820853*^9}, {
+   3.56496262494563*^9, 3.564962661716531*^9}, {3.5649660594146357`*^9, 
+   3.564966063042849*^9}, {3.564966365105282*^9, 3.5649663835835457`*^9}, {
+   3.564966430146551*^9, 3.564966484133363*^9}, {3.56496652867745*^9, 
+   3.564966596984275*^9}, 3.564969920767376*^9, {3.5649710275440598`*^9, 
+   3.564971068165646*^9}, {3.564971451776744*^9, 3.5649715411435633`*^9}, {
+   3.5649715845654087`*^9, 3.564971587693049*^9}, {3.564971799898982*^9, 
+   3.564971868976941*^9}, {3.5649719210777597`*^9, 3.564971963044696*^9}, {
+   3.564972103573039*^9, 3.564972144283869*^9}, {3.564972287322226*^9, 
+   3.564972297850177*^9}, {3.564972430620596*^9, 3.564972489365938*^9}, {
+   3.5649725663746767`*^9, 3.5649725700606833`*^9}, {3.5649726232271643`*^9, 
+   3.564972629646199*^9}, {3.564972789899385*^9, 3.5649728810391893`*^9}, {
+   3.564972982420301*^9, 3.564973006964055*^9}, {3.564973220249505*^9, 
+   3.564973237811921*^9}, {3.5649732687659883`*^9, 3.5649732809617167`*^9}, {
+   3.564973401347426*^9, 3.56497348827153*^9}, {3.566177939053361*^9, 
+   3.566177950126278*^9}, {3.566177988119722*^9, 3.56617799107198*^9}, {
+   3.566178157152483*^9, 3.5661782288694067`*^9}, 3.566178262605892*^9, {
+   3.566229671531856*^9, 3.5662296755080767`*^9}}],
+
+Cell[BoxData[
+ PopupMenuBox[Dynamic[$CellContext`wormid], {"00007"->"\<\"00007\"\>", 
+  "00012"->"\<\"00012\"\>", "00024"->"\<\"00024\"\>", 
+  "00026"->"\<\"00026\"\>", "00118"->"\<\"00118\"\>", 
+  "00148"->"\<\"00148\"\>", "00202"->"\<\"00202\"\>", 
+  "00576"->"\<\"00576\"\>", "00583"->"\<\"00583\"\>", 
+  "01031"->"\<\"01031\"\>", "01316"->"\<\"01316\"\>", 
+  "01325"->"\<\"01325\"\>", "01342"->"\<\"01342\"\>", 
+  "01436"->"\<\"01436\"\>", "01469"->"\<\"01469\"\>", 
+  "01595"->"\<\"01595\"\>", "01600"->"\<\"01600\"\>", 
+  "01673"->"\<\"01673\"\>", "02333"->"\<\"02333\"\>", 
+  "02623"->"\<\"02623\"\>", "02677"->"\<\"02677\"\>", 
+  "02786"->"\<\"02786\"\>", "03702"->"\<\"03702\"\>", 
+  "03863"->"\<\"03863\"\>", "04022"->"\<\"04022\"\>", 
+  "04102"->"\<\"04102\"\>", "04220"->"\<\"04220\"\>"}]], "Output",
+ CellChangeTimes->{3.5662303484699497`*^9, 3.566230501769804*^9, 
+  3.566240711636067*^9}],
+
+Cell[BoxData[
+ SliderBox[Dynamic[$CellContext`\[ScriptT]], {1, 2255, 1}]], "Output",
+ CellChangeTimes->{3.5662303484699497`*^9, 3.566230501769804*^9, 
+  3.566240712442835*^9}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`\[ScriptT], StandardForm],
+  ImageSizeCache->{36., {0., 10.}}]], "Output",
+ CellChangeTimes->{3.5662303484699497`*^9, 3.566230501769804*^9, 
+  3.56624071244703*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ListPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Setting", "[", "dat", "]"}], "\[Transpose]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{
+         RowBox[{"1", ";;", "\[ScriptT]"}], ",", 
+         RowBox[{"elementseigen", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ";;", "2"}], "]"}], "]"}]}], "]"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Setting", "[", "dat", "]"}], "\[Transpose]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{";;", ",", 
+         RowBox[{"elementseigen", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ";;", "2"}], "]"}], "]"}]}], "]"}], "]"}]}], "}"}], 
+    ",", 
+    RowBox[{"Joined", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "False"}], "}"}]}]}], "]"}], "//", 
+  "Dynamic"}]], "Input",
+ CellChangeTimes->{{3.564973767141173*^9, 3.564973826472761*^9}, {
+   3.564973868625423*^9, 3.564973914096575*^9}, {3.564973952801688*^9, 
+   3.564973970780156*^9}, {3.564974007580132*^9, 3.564974040783174*^9}, {
+   3.5649740710370073`*^9, 3.5649741548908033`*^9}, 3.564974192841457*^9, {
+   3.5649742244272842`*^9, 3.564974226790709*^9}, {3.564974257083446*^9, 
+   3.5649742884095783`*^9}, {3.56497433639282*^9, 3.56497440911226*^9}, {
+   3.564974481341071*^9, 3.564974482738103*^9}, {3.566230380311541*^9, 
+   3.566230398804144*^9}, {3.566230473257682*^9, 3.566230474206607*^9}, 
+   3.5662305216051073`*^9, {3.5662305524265947`*^9, 3.566230554851625*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   ListPlot[{
+     Part[
+      Transpose[
+       Setting[$CellContext`dat]], 
+      Span[1, $CellContext`\[ScriptT]], 
+      Part[$CellContext`elementseigen, 
+       Span[1, 2]]], 
+     Part[
+      Transpose[
+       Setting[$CellContext`dat]], 
+      Span[1, All], 
+      Part[$CellContext`elementseigen, 
+       Span[1, 2]]]}, Joined -> {True, False}], StandardForm]]], "Output",
+ CellChangeTimes->{3.566242785760346*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["tdshow"], "Input",
+ CellChangeTimes->{{3.566242843779104*^9, 3.566242844961231*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Manipulate[
+    ListPlot[{
+      WienerFilter[
+       Part[
+        Setting[$CellContext`dat], $CellContext`k], 2], 
+      Part[
+       Setting[$CellContext`dat], $CellContext`k]}, PlotLabel -> Part[
+       Setting[$CellContext`datheaderlong], $CellContext`k], 
+     Joined -> {True, False}, PlotStyle -> {Thick, Thin}], {$CellContext`k, 1, 
+     Length[
+      Setting[$CellContext`datheaderlong]], 1}], StandardForm]]], "Output",
+ CellChangeTimes->{3.566242845761085*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 620},
+WindowMargins->{{161, Automatic}, {52, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2192, 47, 121, "Input"],
+Cell[2752, 69, 1196, 31, 165, "Input"],
+Cell[3951, 102, 3654, 81, 209, "Input"],
+Cell[7608, 185, 396, 9, 32, "Input"],
+Cell[CellGroupData[{
+Cell[8029, 198, 107, 1, 32, "Input"],
+Cell[8139, 201, 1191, 33, 378, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9367, 239, 493, 15, 55, "Input"],
+Cell[9863, 256, 367, 9, 97, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10267, 270, 3976, 84, 275, "Input"],
+Cell[14246, 356, 903, 16, 44, "Output"],
+Cell[15152, 374, 175, 3, 37, "Output"],
+Cell[15330, 379, 211, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15578, 388, 1521, 36, 77, "Input"],
+Cell[17102, 426, 457, 15, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17596, 446, 98, 1, 32, "Input"],
+Cell[17697, 449, 510, 13, 44, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

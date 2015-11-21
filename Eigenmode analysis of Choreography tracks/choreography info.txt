@@ -1,0 +1,49 @@
+###### the good one
+
+java -jar $chore --body-length-units --header -S --who -N all -M2 -O tfDpesSxyuvCCCCCCCC -o tfDpesSxyuvCCCCCCCC --plugin Reoutline::tri::despike=101 --plugin Respine::101::0.1::subpixel --plugin Extract::spine::outline --plugin Eigenspine::6::graphic::data --plugin MeasureReversal::all ./
+###################3
+
+#  M 2: 2 body lengthd
+
+java -jar "H:\data temp\MWT_1.3.0_r1035\analysis\Chore.jar" --spine-from-outline --body-length-units --header -S --who -M2 -o tfpesxyuv --plugin Respine::3::0.1::subpixel 
+
+
+--plugin Reoutline::tri::despike=101
+--plugin Respine::101::0.1::subpixel
+
+--plugin Extract::spine::outline
+
+--plugin Eigenspine::25::graphic::data
+# one new output per component-- the value at the timepoint, plus one for residual error (?) and one extra for angle between the first 2
+#for 6 evecs,
+-o CCCCCCCC
+java -jar "H:\data temp\MWT_1.3.0_r1035\analysis\Chore.jar" --body-length-units --header -S --who -N all -M2 -o tfDpesxyuv --plugin Respine::101::0.1::subpixel --plugin Eigenspine::25::graphic::data
+java -jar "H:\data temp\MWT_1.3.0_r1035\analysis\Chore.jar" --body-length-units --header -S --who -N 1 -M2 -o tfDpesxyuv --plugin Reoutline::tri::despike=101 --plugin Respine::101::0.1::subpixel --plugin Extract::spine::outline --plugin Eigenspine::6::graphic::data
+
+# make a choreography caller! like in MM or something
+java -jar /media/5233C55417260BD8/data\ temp/MWT_1.3.0_r1035/analysis/Chore.jar --body-length-units --header -S --who -N all -M5 -o tfDpesSxyuvCCCCCC --plugin Reoutline::tri::despike=33 --plugin Respine::33::0.1::subpixel --plugin Extract::spine::outline --plugin Eigenspine::4::graphic::data --plugin MeasureReversal::all ./
+
+java -jar /media/5233C55417260BD8/data\ temp/MWT_1.3.0_r1035/analysis/Chore.jar --body-length-units --who -M5 ./
+
+#Usage: --plugin Eigenspine[::n][::help][::graphic][::data]
+#                          [::extra=fname][::vector=fname]
+#  Eigenspine finds principle components of the spine of tracked objects.
+#  The spine is represented as the angles between each segment and the bearing.
+#  A file with the extension .eigen is created containing the eigenvalues
+#    The first column is the fraction of variance explained, components follow
+#    The first row is the mean, the second 1.0/(standard deviation), PC1 is next
+#    (Raw data should be transformed by (data - mean)/std, or (data-row1)*row2)
+#  n is the number of principal components to find (default 3, minimum 2).
+#  help prints this messsage
+#  graphic outputs a 63x63 image histogram of the first two components
+#    normalized by the standard deviation (1 sd = 10 pixels, max=white)
+#    color runs black->blue->yellow->red->white, normalized to max
+#  data outputs the raw angles used to compute the PCs into a file .eigen.data
+#  extra=fname uses the angles in the filename as extra data (may be repeated)
+#  vector=fname uses the vectors in the specified file instead of calculating
+#    If you use both vector and extra, the extra data will be used for graphics;
+#    otherwise, the extra data will only be used to compute the PCs.
+#  The plugin supplies one new output per component--the value of the component
+#    for an object at each timepoint, plus one extra for the residual error and
+#    one extra for the angle (polar coords) of the first two components.
+#  As a side effect, the spine will be flipped such that the head is first.

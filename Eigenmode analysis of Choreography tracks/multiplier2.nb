@@ -1,0 +1,282 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      9927,        281]
+NotebookOptionsPosition[      9156,        249]
+NotebookOutlinePosition[      9495,        264]
+CellTagsIndexPosition[      9452,        261]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"ControlWorm", " ", "=", " ", 
+  RowBox[{"PopupMenu", "[", 
+   RowBox[{
+    RowBox[{"Dynamic", "[", "\[ScriptW]", "]"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", " ", "\[Rule]", " ", 
+       RowBox[{"worms", "[", 
+        RowBox[{"[", "#", "]"}], "]"}]}], " ", "&"}], " ", "/@", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"t", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "1", ",", 
+         RowBox[{"worms", "//", "Length"}]}], "}"}]}], "]"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.5662384745248404`*^9, 3.566238510173725*^9}, {
+  3.566240508808313*^9, 3.566240524626989*^9}, {3.5662418142014723`*^9, 
+  3.566241816553149*^9}}],
+
+Cell[BoxData[
+ PopupMenuBox[Dynamic[$CellContext`\[ScriptW]], {1->"\<\"00007\"\>", 
+  2->"\<\"00012\"\>", 3->"\<\"00024\"\>", 4->"\<\"00026\"\>", 
+  5->"\<\"00118\"\>", 6->"\<\"00148\"\>", 7->"\<\"00202\"\>", 
+  8->"\<\"00576\"\>", 9->"\<\"00583\"\>", 10->"\<\"01031\"\>", 
+  11->"\<\"01316\"\>", 12->"\<\"01325\"\>", 13->"\<\"01342\"\>", 
+  14->"\<\"01436\"\>", 15->"\<\"01469\"\>", 16->"\<\"01595\"\>", 
+  17->"\<\"01600\"\>", 18->"\<\"01673\"\>", 19->"\<\"02333\"\>", 
+  20->"\<\"02623\"\>", 21->"\<\"02677\"\>", 22->"\<\"02786\"\>", 
+  23->"\<\"03702\"\>", 24->"\<\"03863\"\>", 25->"\<\"04022\"\>", 
+  26->"\<\"04102\"\>", 27->"\<\"04220\"\>"}]], "Output",
+ CellChangeTimes->{3.566238513178239*^9, 3.566240527823268*^9, 
+  3.566241832292489*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ControlTime", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Slider", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "\[ScriptT]", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"Length", "[", 
+         RowBox[{"dats", "[", 
+          RowBox[{"[", 
+           RowBox[{"\[ScriptW]", ",", "1"}], "]"}], "]"}], "]"}], ",", "1"}], 
+       "}"}]}], "]"}], "//", "Dynamic"}]}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"dynamic", " ", "because", " ", 
+    RowBox[{"it", "'"}], "s", " ", "defined", " ", "from", " ", "a", " ", 
+    "dynamic", " ", "\[ScriptW]"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"DisplayTime", " ", "=", 
+  RowBox[{"Dynamic", "[", "\[ScriptT]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5662412371881857`*^9, 3.566241241604759*^9}, {
+  3.5662412818969097`*^9, 3.566241295815105*^9}, {3.566241823851859*^9, 
+  3.5662418259634733`*^9}, {3.566242073328673*^9, 3.566242075953187*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Slider[
+    Dynamic[$CellContext`\[ScriptT]], {1, 
+     Length[
+      Part[$CellContext`dats, $CellContext`\[ScriptW], 1]], 1}], StandardForm],
+  ImageSizeCache->{200., {6., 14.}}]], "Output",
+ CellChangeTimes->{3.566241143052326*^9, 3.566241249419279*^9, 
+  3.566241833772593*^9, 3.566242078135006*^9}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`\[ScriptT], StandardForm],
+  ImageSizeCache->{27., {0., 10.}}]], "Output",
+ CellChangeTimes->{3.566241143052326*^9, 3.566241249419279*^9, 
+  3.566241833772593*^9, 3.566242078145112*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DisplayDataData", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dats", "]"}], "[", 
+               RowBox[{"[", 
+                RowBox[{"\[ScriptW]", ",", "k"}], "]"}], "]"}], "[", 
+              RowBox[{"[", ";;", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dats", "]"}], "[", 
+               RowBox[{"[", 
+                RowBox[{"\[ScriptW]", ",", "l"}], "]"}], "]"}], "[", 
+              RowBox[{"[", ";;", "]"}], "]"}]}], "}"}], "\[Transpose]"}], ",", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dats", "]"}], "[", 
+               RowBox[{"[", 
+                RowBox[{"\[ScriptW]", ",", "k"}], "]"}], "]"}], "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ";;", "\[ScriptT]"}], "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Setting", "[", "dats", "]"}], "[", 
+               RowBox[{"[", 
+                RowBox[{"\[ScriptW]", ",", "l"}], "]"}], "]"}], "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ";;", "\[ScriptT]"}], "]"}], "]"}]}], "}"}], 
+           "\[Transpose]"}]}], "}"}], ",", 
+        RowBox[{"PlotLabel", " ", "\[Rule]", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+           RowBox[{"[", "l", "]"}], "]"}], "<>", "\"\< vs \>\"", "<>", 
+          RowBox[{
+           RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}]}], "  ", ",", 
+        RowBox[{"Joined", " ", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"False", ",", "True"}], "}"}]}], ",", 
+        RowBox[{"PlotStyle", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{"Thin", ",", "Thick"}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "//", "Length"}], 
+        ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"l", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "//", "Length"}], 
+        ",", "1"}], "}"}]}], "]"}], " ", "//", "Dynamic"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{
+  3.5662407645536118`*^9, {3.566240928233844*^9, 3.566240967315233*^9}, {
+   3.566241796338295*^9, 3.566241804103219*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DisplayWormShapes", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Partition", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"contours", "[", 
+             RowBox[{"[", "\[ScriptW]", "]"}], "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"\[ScriptT]", ",", 
+              RowBox[{"2", ";;"}]}], "]"}], "]"}], ",", "2"}], "]"}], " ", 
+         ",", 
+         RowBox[{"Partition", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"spines", "[", 
+             RowBox[{"[", "\[ScriptW]", "]"}], "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"\[ScriptT]", ",", 
+              RowBox[{"2", ";;"}]}], "]"}], "]"}], ",", "2"}], "]"}]}], "}"}],
+        ",", 
+       RowBox[{"Joined", " ", "\[Rule]", " ", 
+        RowBox[{"{", 
+         RowBox[{"True", ",", "False"}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Thick", ",", "Thin"}], "}"}]}], ",", 
+       RowBox[{"AspectRatio", " ", "\[Rule]", " ", "1"}], ",", 
+       RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"PlotRangePadding", "\[Rule]", "0.5"}], ",", 
+       RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"\"\<worm \>\"", "<>", 
+         RowBox[{"worms", "[", 
+          RowBox[{"[", "\[ScriptW]", "]"}], "]"}]}]}]}], "]"}], "//", 
+     "Dynamic"}]}], ";"}], "\n"}]], "Input",
+ CellChangeTimes->{{3.5662419166048803`*^9, 3.566242083052286*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DisplayNumericalStats", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Grid", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"dats", "[", 
+           RowBox[{"[", 
+            RowBox[{"\[ScriptW]", ",", "elementsdat"}], "]"}], "]"}], 
+          "\[Transpose]"}], "[", 
+         RowBox[{"[", "\[ScriptT]", "]"}], "]"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Setting", "[", "datheaderlong", "]"}], "[", 
+         RowBox[{"[", "elementsdat", "]"}], "]"}]}], "}"}], "\[Transpose]"}], 
+     "]"}], "//", "Dynamic"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.566242134978952*^9, 3.566242140272684*^9}, {
+  3.566242389303911*^9, 3.566242394167721*^9}, {3.5662427425416803`*^9, 
+  3.5662427698053293`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DisplayEigenValues", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"BarChart", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"dats", "[", 
+         RowBox[{"[", 
+          RowBox[{"\[ScriptW]", ",", "elementseigen"}], "]"}], "]"}], 
+        "\[Transpose]"}], "[", 
+       RowBox[{"[", "\[ScriptT]", "]"}], "]"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], "//", 
+    "Dynamic"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.566242909749364*^9, 3.5662429531119213`*^9}}]
+},
+WindowSize->{847, 971},
+WindowMargins->{{-26, Automatic}, {Automatic, 110}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 686, 18, 55, "Input"],
+Cell[1111, 35, 749, 12, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1897, 52, 965, 22, 77, "Input"],
+Cell[2865, 76, 341, 8, 37, "Output"],
+Cell[3209, 86, 232, 4, 32, "Output"]
+}, Open  ]],
+Cell[3456, 93, 2723, 70, 187, "Input"],
+Cell[6182, 165, 1616, 42, 165, "Input"],
+Cell[7801, 209, 810, 21, 55, "Input"],
+Cell[8614, 232, 538, 15, 55, "Input"]
+}
+]
+*)
+

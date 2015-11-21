@@ -1,0 +1,303 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11337,        294]
+NotebookOptionsPosition[     10828,        273]
+NotebookOutlinePosition[     11163,        288]
+CellTagsIndexPosition[     11120,        285]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "parameters", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "eventually", " ", "split", " ", "this", " ", "off", " ", "into", " ", 
+    "an", " ", "initialization", " ", "notebook"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"choreheader", " ", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\"\<t\>\"", "\[Rule]", "\"\<time\>\""}], ",", 
+       RowBox[{"\"\<f\>\"", "\[Rule]", "\"\<frame\>\""}], ",", 
+       RowBox[{"\"\<D\>\"", "\[Rule]", "\"\<id\>\""}], ",", 
+       RowBox[{"\"\<n\>\"", "\[Rule]", "\"\<number\>\""}], ",", 
+       RowBox[{"\"\<N\>\"", "\[Rule]", "\"\<goodnumber\>\""}], ",", 
+       RowBox[{"\"\<p\>\"", "\[Rule]", "\"\<persistence\>\""}], ",", 
+       RowBox[{"\"\<e\>\"", "\[Rule]", "\"\<area\>\""}], ",", 
+       RowBox[{"\"\<s\>\"", "\[Rule]", "\"\<speed\>\""}], ",", 
+       RowBox[{"\"\<S\>\"", "\[Rule]", "\"\<angular\>\""}], ",", 
+       RowBox[{"\"\<l\>\"", "\[Rule]", "\"\<length\>\""}], ",", 
+       RowBox[{"\"\<L\>\"", "\[Rule]", "\"\<rellength\>\""}], ",", 
+       RowBox[{"\"\<w\>\"", "\[Rule]", "\"\<width\>\""}], ",", 
+       RowBox[{"\"\<W\>\"", "\[Rule]", "\"\<relwidth\>\""}], ",", 
+       RowBox[{"\"\<a\>\"", "\[Rule]", "\"\<aspect\>\""}], ",", 
+       RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<relaspect\>\""}], ",", 
+       RowBox[{"\"\<m\>\"", "\[Rule]", "\"\<midline\>\""}], ",", 
+       RowBox[{"\"\<M\>\"", "\[Rule]", "\"\<morphwidth\>\""}], ",", 
+       RowBox[{"\"\<k\>\"", "\[Rule]", "\"\<kink\>\""}], ",", 
+       RowBox[{"\"\<b\>\"", "\[Rule]", "\"\<bias\>\""}], ",", 
+       RowBox[{"\"\<P\>\"", "\[Rule]", "\"\<pathlen\>\""}], ",", 
+       RowBox[{"\"\<c\>\"", "\[Rule]", "\"\<curve\>\""}], ",", 
+       RowBox[{"\"\<d\>\"", "\[Rule]", "\"\<dir\>\""}], ",", 
+       RowBox[{"\"\<x\>\"", "\[Rule]", "\"\<loc_x\>\""}], ",", 
+       RowBox[{"\"\<y\>\"", "\[Rule]", "\"\<loc_y\>\""}], ",", 
+       RowBox[{"\"\<u\>\"", "\[Rule]", "\"\<vel_x\>\""}], ",", 
+       RowBox[{"\"\<v\>\"", "\[Rule]", "\"\<vel_y\>\""}], ",", 
+       RowBox[{"\"\<o\>\"", "\[Rule]", "\"\<orient\>\""}], ",", 
+       RowBox[{"\"\<r\>\"", "\[Rule]", "\"\<crab\>\""}], ",", 
+       RowBox[{"\"\<C\>\"", "\[Rule]", "\"\<custom\>\""}], ",", 
+       RowBox[{"\"\<1\>\"", "\[Rule]", "\"\<tap\>\""}], ",", 
+       RowBox[{"\"\<2\>\"", "\[Rule]", "\"\<puff\>\""}], ",", 
+       RowBox[{"\"\<3\>\"", "\[Rule]", "\"\<stim3\>\""}], ",", 
+       RowBox[{"\"\<4\>\"", "\[Rule]", "\"\<stim4\>\""}]}], "}"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"datheadershort", " ", "=", " ", 
+     RowBox[{"\"\<tfDpesSxyuvCCCCCC\>\"", "//", "Characters"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "this", " ", "is", " ", "also", " ", "the", " ", "choreography", " ", 
+     "command"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"datheaderlong", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"datheadershort", "//", "Setting"}], ")"}], " ", "/.", " ", 
+      "choreheader"}]}], " ", ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "datadir", " ", "=", " ", 
+     "\"\</media/5233C55417260BD8/data temp/zzzz new worm \
+vids/processing/20130102_221428/\>\""}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"FileNameSetter", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", "datadir", "]"}], ",", "\"\<Directory\>\""}], 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetDirectory", "[", "datadir", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"extensions", " ", "for", " ", 
+     RowBox[{"mwt", "/", "chore"}], " ", "output", " ", "files"}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"multitypes", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"\"\<dat\>\"", ",", "\"\<spine\>\"", ",", "\"\<outline\>\""}], 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"singletypes", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"\"\<eigen\>\"", ",", "\"\<data\>\"", ",", "\"\<rev\>\""}], 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"of", " ", "'"}], "good", " ", 
+     RowBox[{"data", "'"}], " ", "where", " ", 
+     RowBox[{"there", "'"}], "s", " ", "no", " ", "nans"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"bounds", " ", "=", " ", 
+     RowBox[{"10", ";;", 
+      RowBox[{"-", "10"}]}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.564875869060912*^9, 3.564875887761649*^9}, {
+   3.5648759401820297`*^9, 3.56487596961917*^9}, 3.564877598620989*^9, {
+   3.564878142565826*^9, 3.564878168596631*^9}, 3.564955741883477*^9, {
+   3.564961981867697*^9, 3.564961996031172*^9}, {3.564968481552252*^9, 
+   3.56496850529065*^9}, {3.566176896479354*^9, 3.566177037081749*^9}, 
+   3.5662376875725517`*^9, {3.566237912196402*^9, 3.566237925493334*^9}, {
+   3.566238018639629*^9, 3.5662380630717793`*^9}, {3.5662431634428673`*^9, 
+   3.566243167160502*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  ButtonBox[
+   DynamicBox[FEPrivate`FrontEndResource["FEStrings", "BrowseLabel"],
+    ImageSizeCache->{53., {0., 9.}}],
+   Appearance->"DialogBox",
+   ButtonFunction:>BoxForm`FileNameSetterFunction[
+     Dynamic[$CellContext`datadir], "Directory", Automatic, Automatic],
+   Enabled->Automatic,
+   Evaluator->Automatic,
+   ImageMargins->0,
+   ImageSize->Automatic,
+   Method->"Queued"],
+  FileNameSetter[
+   Dynamic[$CellContext`datadir], "Directory", Automatic]]], "Output",
+ CellChangeTimes->{
+  3.56617699688183*^9, 3.566177040804442*^9, {3.566229525662704*^9, 
+   3.566229546836205*^9}, {3.566230323369474*^9, 3.5662303441001883`*^9}, 
+   3.5662380980261307`*^9, 3.566243105832109*^9, 3.56624317435441*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"elementsdat", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "5", ",", "6", ",", "10", ",", "11"}], "}"}]}], ";"}], 
+  " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"not", " ", "sure", " ", "why", " ", "this"}], "..."}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"elementseigen", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "13", ",", "14", ",", "15"}], "}"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.56623688264622*^9, 3.566236887840147*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"IDs", " ", "from", " ", 
+    RowBox[{"MWT", "/", "Chore"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"make", " ", "this", " ", "dynamic", " ", "or", " ", 
+    RowBox[{"population", " ", "!"}], "b"}], " ", "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"worms", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"FileNames", "[", "\"\<*.dat\>\"", "]"}], "//", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"#", ",", "\"\<.\>\""}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{";;", ",", "2"}], "]"}], "]"}], "&"}]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"wormid", " ", "=", " ", 
+     RowBox[{"worms", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"an", " ", "element", " ", "of", " ", "worms"}], " ", 
+    "*)"}]}]}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{"genericFileNamer", " ", ":=", 
+  RowBox[{
+   RowBox[{"First", "[", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"StringJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"\"\<*\>\"", ",", "#1", ",", "\"\<*\>\"", ",", "filetype"}], 
+       "}"}], "]"}], "]"}], "]"}], "&"}]}], "\n", 
+ RowBox[{"genericFileLoader", " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ReadList", "[", 
+     RowBox[{"#1", ",", "Number", ",", 
+      RowBox[{"RecordLists", "\[Rule]", "True"}]}], "]"}], "[", 
+    RowBox[{"[", "bounds", "]"}], "]"}], "&"}]}], "\[IndentingNewLine]", 
+ RowBox[{"datFileLoader", " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"#1", ",", "\"\<Table\>\""}], "]"}], "[", 
+     RowBox[{"[", "bounds", "]"}], "]"}], "\[Transpose]"}], " ", 
+   "&"}]}]}], "Input",
+ CellChangeTimes->{
+  3.5662343588617363`*^9, {3.566234389791533*^9, 3.5662344206943703`*^9}, {
+   3.56623461541636*^9, 3.566234649189906*^9}, 3.566234834711465*^9, {
+   3.566236974502027*^9, 3.566236974860911*^9}, 3.566237240350778*^9, {
+   3.5662374196060953`*^9, 3.5662374577994013`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spinefiles", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"genericFileNamer", "/.", 
+      RowBox[{"{", 
+       RowBox[{"filetype", "\[Rule]", "\"\<spine\>\""}], "}"}]}], ")"}], " ", 
+    "/@", " ", "worms"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"contourfiles", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"genericFileNamer", "/.", 
+      RowBox[{"{", 
+       RowBox[{"filetype", "\[Rule]", "\"\<outline\>\""}], "}"}]}], ")"}], 
+    " ", "/@", " ", "worms"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"datfiles", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"genericFileNamer", " ", "/.", " ", 
+      RowBox[{"{", 
+       RowBox[{"filetype", "\[Rule]", "\"\<dat\>\""}], "}"}]}], ")"}], " ", "/@",
+     " ", "worms"}]}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.5662343588617363`*^9, {3.566234389791533*^9, 3.5662345816252337`*^9}, {
+   3.566234637494573*^9, 3.566234639812307*^9}, {3.566234765799135*^9, 
+   3.56623477205379*^9}, {3.5662366531084623`*^9, 3.566236674014591*^9}, {
+   3.566236736981584*^9, 3.566236742823091*^9}, 3.5662369818385563`*^9, 
+   3.566237233941744*^9, {3.5662372780698757`*^9, 3.566237304797852*^9}, 
+   3.56623733661524*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spines", " ", "=", " ", 
+   RowBox[{"genericFileLoader", " ", "/@", " ", "spinefiles"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"contours", " ", "=", " ", 
+   RowBox[{"genericFileLoader", " ", "/@", " ", "contourfiles"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"dats", " ", "=", " ", 
+   RowBox[{"datFileLoader", " ", "/@", " ", "datfiles"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.56623708243288*^9, 3.5662370867703238`*^9}, {
+   3.566237120507431*^9, 3.5662371570431557`*^9}, {3.566237187395762*^9, 
+   3.566237225028039*^9}, 3.566237515247319*^9, 3.5662377072051897`*^9}]
+},
+WindowSize->{657, 738},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 5009, 104, 627, "Input"],
+Cell[5591, 128, 744, 18, 41, "Output"]
+}, Open  ]],
+Cell[6350, 149, 544, 16, 55, "Input"],
+Cell[6897, 167, 916, 25, 143, "Input"],
+Cell[7816, 194, 1129, 28, 121, "Input"],
+Cell[8948, 224, 1243, 31, 143, "Input"],
+Cell[10194, 257, 630, 14, 77, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

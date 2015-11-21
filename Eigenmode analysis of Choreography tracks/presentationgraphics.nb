@@ -1,0 +1,150 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5089,        141]
+NotebookOptionsPosition[      4774,        126]
+NotebookOutlinePosition[      5112,        141]
+CellTagsIndexPosition[      5069,        138]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GraphVertexRenderer", " ", "=", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"White", ",", 
+         RowBox[{"Disk", "[", 
+          RowBox[{"#", ",", "0.15"}], "]"}]}], "}"}], ",", 
+       RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+       RowBox[{"Circle", "[", 
+        RowBox[{"#", ",", "0.15"}], "]"}], ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MatchQ", "[", 
+          RowBox[{"#2", ",", "False"}], "]"}], ",", 
+         RowBox[{"Circle", "[", 
+          RowBox[{"#", ",", "0.12"}], "]"}], ",", 
+         RowBox[{"{", "}"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{"#2", ",", "#"}], "]"}]}], "}"}], "&"}], ")"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.566225510938014*^9, 3.566225542521967*^9}, {
+  3.5662256171223307`*^9, 3.566225617875454*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"grafix", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Eyes", "\[Rule]", "BrainPersonRecognizer"}], ",", 
+       "\"\<nate's image\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Ears", "\[Rule]", "BrainPersonRecognizer"}], ",", 
+       "\"\<\\\"hi laura!\\\" \\n (in nate's voice)\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Ears", "\[Rule]", "BrainLanguageRecognizer"}], ",", 
+       "\"\<\\\"hi laura!\\\" \\n (in nate's voice)\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainPersonRecognizer", "\[Rule]", "BrainMemory"}], ",", 
+       "\"\<it's nate\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainMemory", "\[Rule]", "BrainDecider"}], ",", 
+       "\"\<all good!\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainMemory", "\[Rule]", "BrainDecider"}], ",", 
+       "\"\<he forgot my birthday!\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+     
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainLanguageRecognizer", "\[Rule]", "BrainDecider"}], ",", 
+       "\"\<it's a greeting\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainDecider", "\[Rule]", "BrainTalker"}], ",", 
+       "\"\<HAPPY\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainDecider", "\[Rule]", "BrainTalker"}], ",", 
+       "\"\<PISSED\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainTalker", "\[Rule]", "Mouth"}], ",", 
+       "\"\<\\\"hi nate!\\\"\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"BrainTalker", "\[Rule]", "Mouth"}], ",", 
+       "\"\<\\\"eat shit\\n and die!!\\\"\>\""}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.566225583322648*^9, 3.5662255978249903`*^9}, {
+   3.566225645104313*^9, 3.566225713351791*^9}, {3.5662258388755703`*^9, 
+   3.566225857097898*^9}, {3.566226218610855*^9, 3.5662262816430893`*^9}, {
+   3.566226312272854*^9, 3.566226421322794*^9}, {3.56622646767596*^9, 
+   3.5662264912029*^9}, 3.5662265386281433`*^9, {3.566226618124826*^9, 
+   3.566226810446494*^9}, {3.5662269703425913`*^9, 3.566227123468465*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mindOfLauraGraphPlot", " ", "=", " ", 
+   RowBox[{"GraphPlot", "[", 
+    RowBox[{"grafix", ",", 
+     RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+     RowBox[{"VertexRenderingFunction", "\[Rule]", "GraphVertexRenderer"}], 
+     ",", 
+     RowBox[{"EdgeLabeling", "\[Rule]", "All"}], ",", 
+     RowBox[{"MultiedgeStyle", "\[Rule]", "0.25"}], ",", 
+     RowBox[{"Method", "\[Rule]", "\"\<CircularEmbedding\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.566225412652995*^9, 3.566225493359578*^9}, {
+  3.566225553945239*^9, 3.566225557392495*^9}, {3.566225606608038*^9, 
+  3.5662256325602217`*^9}, {3.56622569343042*^9, 3.566225698150276*^9}, {
+  3.5662258655854053`*^9, 3.566225866087124*^9}, {3.566226814776635*^9, 
+  3.566226848031384*^9}, {3.566226940226322*^9, 3.566226951511902*^9}, {
+  3.5662271303526087`*^9, 3.566227175311697*^9}, {3.56622745914555*^9, 
+  3.566227517619115*^9}, {3.5662275744026003`*^9, 3.566227577304718*^9}, {
+  3.566227609946121*^9, 3.5662276875417347`*^9}}]
+},
+WindowSize->{740, 620},
+WindowMargins->{{217, Automatic}, {13, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 908, 25, 77, "Input"],
+Cell[1468, 47, 2259, 56, 297, "Input"],
+Cell[3730, 105, 1040, 19, 99, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
